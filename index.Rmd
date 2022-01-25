@@ -1,11 +1,13 @@
 ---
 title: "Discharge Data Example"
-author: "Matthew Ross"
-date: "1/24/2022"
+author: "Sam Leuthold"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
 output:
   html_document:
     toc: true
     toc_float: true
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -36,7 +38,7 @@ The Poudre River at Lincoln Bridge is:
 ![](https://waterdata.usgs.gov/nwisweb/local/state/co/text/pics/06752260big.jpg)
 
 
-## Data Acquisition and Plotting tests
+# Data Acquisition and Plotting tests
 
 ## Data Download
 
@@ -76,7 +78,7 @@ q_xts <- xts(q$q, order.by = q$Date)
 
 
 dygraph(q_xts) %>%
-  dyAxis("y", label = "Discharge (cfs)") 
+  dyAxis("y", label = "Discharge (cfs)")
 ```
 
 
@@ -109,7 +111,7 @@ don't plagiarize.
 7) Use the GitHub -> Settings -> Pages tab to create a website of your report.
 
 8) Bonus, make the timestamp in the header dynamic. As in it only adds
-todays date, not just a static date you enter. 
+todays date, not just a static date you enter
 
 9) Bonus, create an "index_talk.Rmd" version of your document using the
 `revealjs` package. Add link to your original report-style document. 
@@ -119,8 +121,14 @@ todays date, not just a static date you enter.
 
 ## DyGraph example. 
 
+``` {r}
+dygraph(q_xts) %>%
+  dyAxis("y", label = "Discharge (cfs)") %>% 
+  dyOptions(drawPoints = TRUE, pointSize = 2, colors = "black")
+
+```
 
 ## Poudre Paragraph
 
-
+The Poudre river is a *key* source of water to the Northern Colorado region. The hydrologic processes that determine discharge are characteristic of streams that receive mountain block recharge in in the semi-arid west ([Foy et al, 2015](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%29HE.1943-5584.0001130)). However, with **changing climatic norms** such as decreased winter snow pack and an increased prevalence of rain on snow events, the Poudre is at an increased risk of sustained drought conditions ([Salas et al., 2005](https://ascelibrary.org/doi/pdf/10.1061/%28ASCE%290733-9496%282005%29131%3A5%28383%29)). Figure 1 shows the daily discharge of the Poudre over the last **5** years. The a pattern of decreased peak flow during snowmelt periods is further indicative of changing hydrologic regimes. An interesting aside is the short lived secondary peak in flow that happens annually between September and October, *possibly* due to a shift in water usage, though this bump is also observable at the [mouth of Poudre Canyon](https://dwr.state.co.us/Tools/Stations/CLABOXCO?params=DISCHRG).
 
