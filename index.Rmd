@@ -116,6 +116,7 @@ todays date, not just a static date you enter
 9) Bonus, create an "index_talk.Rmd" version of your document using the
 `revealjs` package. Add link to your original report-style document. 
 
+[Link to presentation](https://github.com/S-Leuthold/1_rmarkdown_examples/index2.html)
 
 
 
