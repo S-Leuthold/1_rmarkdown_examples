@@ -3,11 +3,12 @@ title: "Discharge Data Example"
 author: "Sam Leuthold"
 date: "`r format(Sys.time(), '%d %B, %Y')`"
 output: 
-   html_document:
-    toc: true
-    toc_float: true
-editor_options:
-  chunk_output_type: console
+  revealjs::revealjs_presentation
+#   html_document:
+#     toc: true
+#     toc_float: true
+# editor_options: 
+#   chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
